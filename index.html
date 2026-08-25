@@ -157,9 +157,26 @@
     margin-top: 1.25rem;
   }
 
+  /* Masthead */
+  /* The banner's own black is a shade lighter than the page, so the seam is
+     made deliberate with the same hairline used between sections. The height
+     also controls the crop: a taller box on narrow screens scales the artwork
+     up, keeping the wordmark legible instead of shrinking it. */
+  .masthead {
+    overflow: hidden;
+    border-bottom: 1px solid var(--rule);
+  }
+  .masthead img {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 34vw, 400px);
+    object-fit: cover;
+    object-position: center;
+  }
+
   /* Hero */
   .hero {
-    padding-top: clamp(4rem, 12vw, 8rem);
+    padding-top: clamp(2.75rem, 7vw, 4.5rem);
     padding-bottom: clamp(4rem, 12vw, 8rem);
   }
   .hero h1 {
@@ -328,10 +345,14 @@
 
 <main id="main" tabindex="-1">
 
-  <section class="hero" id="top">
+  <div class="masthead" id="top">
+    <img src="assets/masthead.jpg" width="1672" height="941" fetchpriority="high" decoding="async" alt="Passionet Studio. Short promo videos for books.">
+  </div>
+
+  <section class="hero">
     <div class="wrap">
-      <h1>Book promo videos for authors and publishers</h1>
-      <p>We turn books into short promo videos, built from the book's own artwork, scripted, voiced, and delivered ready for social, Amazon A+ and YouTube.</p>
+      <h1>We turn books into short promo videos</h1>
+      <p>Built from the book's own artwork, scripted, voiced, and delivered ready for social, Amazon A+ and YouTube.</p>
       <a class="button" href="#contact">Get in touch</a>
     </div>
   </section>
