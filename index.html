@@ -72,6 +72,10 @@
     padding: 0 1.25rem;
   }
 
+  /* The skip target takes focus programmatically; suppressing the ring
+     avoids outlining the whole main region on activation. */
+  main[tabindex="-1"]:focus { outline: none; }
+
   .skip {
     position: absolute;
     left: -9999px;
@@ -322,7 +326,7 @@
   </div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
   <section class="hero" id="top">
     <div class="wrap">
