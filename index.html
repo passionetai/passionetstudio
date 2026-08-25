@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passionet Studio | Book promo videos for authors and publishers</title>
+<meta name="description" content="Passionet Studio turns books into short promo videos. Built from the book's own artwork, scripted, voiced, and delivered ready for social, Amazon A+ and YouTube.">
+<link rel="canonical" href="https://passionetstudio.com">
+<meta property="og:title" content="Passionet Studio | Book promo videos for authors and publishers">
+<meta property="og:description" content="We turn books into short promo videos. Built from the book's own artwork, scripted, voiced, and delivered ready for social, Amazon A+ and YouTube.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://passionetstudio.com">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --bg-raised: #121214;
+    --text: #ece8e1;
+    --muted: #9a968e;
+    --rule: #26262a;
+    --accent: #e2a15c;
+    --accent-hover: #f0b878;
+    --measure: 1100px;
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  p { margin: 0; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-hover); }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+  }
+  .skip:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 10;
+    background: var(--bg-raised);
+    color: var(--text);
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--rule);
+  }
+
+  /* Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background-color 200ms ease, border-color 200ms ease, backdrop-filter 200ms ease;
+  }
+  .site-header.is-scrolled {
+    background: rgba(11, 11, 12, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: var(--rule);
+  }
+  .site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 4.25rem;
+  }
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
+    color: var(--text);
+  }
+  .wordmark:hover { color: var(--text); }
+  .nav-link {
+    font-size: 0.9375rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Sections */
+  section { padding: clamp(3.5rem, 9vw, 6.5rem) 0; }
+  section + section { border-top: 1px solid var(--rule); }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title { font-size: clamp(1.9rem, 4.5vw, 2.75rem); }
+
+  .section-intro {
+    color: var(--muted);
+    max-width: 46ch;
+    margin-top: 1.25rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: clamp(4rem, 12vw, 8rem);
+    padding-bottom: clamp(4rem, 12vw, 8rem);
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 8.5vw, 4.75rem);
+    max-width: 16ch;
+  }
+  .hero p {
+    margin-top: 1.75rem;
+    max-width: 52ch;
+    color: var(--muted);
+    font-size: clamp(1.0625rem, 2.2vw, 1.25rem);
+  }
+
+  .button {
+    display: inline-block;
+    margin-top: 2.5rem;
+    padding: 0.9rem 1.9rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+  .button:hover {
+    background: var(--accent);
+    color: #0b0b0c;
+  }
+
+  /* Grids */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.75rem 2rem;
+    margin-top: 3rem;
+  }
+
+  .video-frame {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    background: var(--bg-raised);
+    border: 1px solid var(--rule);
+  }
+  .video-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .card-title {
+    font-size: 1.375rem;
+    margin-top: 1.25rem;
+  }
+  .card-body {
+    color: var(--muted);
+    margin-top: 0.5rem;
+    font-size: 0.9875rem;
+  }
+
+  /* Formats */
+  .format {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+  }
+  .format h3 { font-size: 1.5rem; }
+  .format .duration {
+    color: var(--accent);
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.75rem;
+  }
+  .note {
+    margin-top: 3rem;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+
+  /* Testimonial */
+  .quote {
+    margin: 3rem 0 0;
+    max-width: 46rem;
+    border-left: 1px solid var(--accent);
+    padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  }
+  .quote blockquote {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    line-height: 1.3;
+  }
+  .quote figcaption {
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* Contact */
+  .contact-email {
+    display: inline-block;
+    font-family: var(--serif);
+    font-size: clamp(1.75rem, 6vw, 3.25rem);
+    line-height: 1.15;
+    margin-top: 1.5rem;
+    word-break: break-word;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.15em;
+    transition: border-color 180ms ease;
+  }
+  .contact-email:hover { border-bottom-color: var(--accent); }
+  .contact-note {
+    margin-top: 1.75rem;
+    color: var(--muted);
+  }
+
+  /* Footer */
+  .site-footer {
+    border-top: 1px solid var(--rule);
+    padding: 2.5rem 0;
+    color: var(--muted);
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+  }
+  .site-footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 56rem) {
+    .grid { grid-template-columns: repeat(3, 1fr); }
+    .wrap { padding: 0 2.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Passionet Studio</a>
+    <a class="nav-link" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <h1>Book promo videos for authors and publishers</h1>
+      <p>We turn books into short promo videos, built from the book's own artwork, scripted, voiced, and delivered ready for social, Amazon A+ and YouTube.</p>
+      <a class="button" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <p class="eyebrow">Work</p>
+      <h2 class="section-title" id="work-title">Recent films</h2>
+      <p class="section-intro">Recent work produced for author Mary Ann Bernal, published by Whispering Legends Press.</p>
+
+      <div class="grid">
+        <article>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/Opk8xYJR4U8?rel=0&amp;modestbranding=1" title="AnaRose and Medusa's Curse promo video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3 class="card-title">AnaRose and Medusa's Curse</h3>
+          <p class="card-body">Adventure and mythology. Athens, the Siwa Oasis and the hunt for a cursed amulet.</p>
+        </article>
+
+        <article>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/jhf-Vrv5Zpo?rel=0&amp;modestbranding=1" title="The Briton and the Dane promo video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3 class="card-title">The Briton and the Dane</h3>
+          <p class="card-body">Historical fiction. Norse raiders, a wounded stranger, and a fragile peace in Saxon Britain.</p>
+        </article>
+
+        <article>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/Mpa8hgZ7tIM?rel=0&amp;modestbranding=1" title="Crusader's Path promo video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <h3 class="card-title">Crusader's Path</h3>
+          <p class="card-body">Historical fiction. Two lives crossing on the road to Jerusalem during the First Crusade.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="formats" aria-labelledby="formats-title">
+    <div class="wrap">
+      <p class="eyebrow">Formats</p>
+      <h2 class="section-title" id="formats-title">What we produce</h2>
+
+      <div class="grid">
+        <article class="format">
+          <h3>Clip</h3>
+          <p class="duration">20 to 30 seconds</p>
+          <p class="card-body">Cover and key text in motion, music.</p>
+        </article>
+
+        <article class="format">
+          <h3>Standard</h3>
+          <p class="duration">45 to 60 seconds</p>
+          <p class="card-body">Voiceover, book artwork in motion, closing card with buy link.</p>
+        </article>
+
+        <article class="format">
+          <h3>Full</h3>
+          <p class="duration">75 to 90 seconds</p>
+          <p class="card-body">Multi-scene treatment, delivered vertical, square and 16:9.</p>
+        </article>
+      </div>
+
+      <p class="note">For illustrated books we build from the author's own artwork rather than generating characters, so what appears on screen is work the author already owns.</p>
+    </div>
+  </section>
+
+  <!--
+  <section id="testimonial" aria-labelledby="testimonial-title">
+    <div class="wrap">
+      <p class="eyebrow">Testimonial</p>
+      <h2 class="section-title" id="testimonial-title">In their words</h2>
+      <figure class="quote">
+        <blockquote>TESTIMONIAL_PLACEHOLDER</blockquote>
+        <figcaption>ATTRIBUTION_NAME, ATTRIBUTION_ROLE</figcaption>
+      </figure>
+    </div>
+  </section>
+  -->
+
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2 class="section-title" id="contact-title">Get in touch</h2>
+      <a class="contact-email" href="mailto:hello@passionetstudio.com">hello@passionetstudio.com</a>
+      <p class="contact-note">Send a title and we'll come back with a script.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Passionet Studio</span>
+    <span>2026</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var header = document.getElementById('site-header');
+    var ticking = false;
+    function update() {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    update();
+  })();
+</script>
+</body>
+</html>
