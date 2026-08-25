@@ -10,7 +10,13 @@
 <meta property="og:description" content="We turn books into short promo videos. Built from the book's own artwork, scripted, voiced, and delivered ready for social, Amazon A+ and YouTube.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://passionetstudio.com">
+<meta property="og:image" content="https://passionetstudio.com/assets/banner.png">
+<meta property="og:image:alt" content="Passionet Studio. Short promo videos for books.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://passionetstudio.com/assets/banner.png">
 <meta name="theme-color" content="#0b0b0c">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -104,10 +110,21 @@
     min-height: 4.25rem;
   }
   .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
     font-family: var(--serif);
     font-size: 1.25rem;
     letter-spacing: 0.01em;
     color: var(--text);
+  }
+  /* Background image rather than <img>: if the asset is missing the mark
+     simply does not paint, leaving the wordmark clean. */
+  .mark {
+    flex: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: url("assets/logo.png") center / contain no-repeat;
   }
   .wordmark:hover { color: var(--text); }
   .nav-link {
@@ -265,9 +282,19 @@
   }
   .site-footer .wrap {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+  .site-footer .colophon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .site-footer .mark {
+    width: 1.375rem;
+    height: 1.375rem;
   }
 
   @media (min-width: 56rem) {
@@ -290,7 +317,7 @@
 
 <header class="site-header" id="site-header">
   <div class="wrap">
-    <a class="wordmark" href="#top">Passionet Studio</a>
+    <a class="wordmark" href="#top"><span class="mark" aria-hidden="true"></span>Passionet Studio</a>
     <a class="nav-link" href="#contact">Get in touch</a>
   </div>
 </header>
@@ -368,18 +395,16 @@
     </div>
   </section>
 
-  <!--
   <section id="testimonial" aria-labelledby="testimonial-title">
     <div class="wrap">
       <p class="eyebrow">Testimonial</p>
       <h2 class="section-title" id="testimonial-title">In their words</h2>
       <figure class="quote">
-        <blockquote>TESTIMONIAL_PLACEHOLDER</blockquote>
-        <figcaption>ATTRIBUTION_NAME, ATTRIBUTION_ROLE</figcaption>
+        <blockquote>Passionet Studio brings characters to life with cinematic precision. Their work is immersive, professional, and unforgettable. Highly recommended.</blockquote>
+        <figcaption>Mary Ann Bernal, author</figcaption>
       </figure>
     </div>
   </section>
-  -->
 
   <section id="contact" aria-labelledby="contact-title">
     <div class="wrap">
@@ -394,7 +419,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>Passionet Studio</span>
+    <span class="colophon"><span class="mark" aria-hidden="true"></span>Passionet Studio</span>
     <span>2026</span>
   </div>
 </footer>
